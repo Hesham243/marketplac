@@ -5,7 +5,7 @@ const commentSchema = new mongoose.Schema({
   content: String,
   author: {
     type: Schema.Types.ObjectId,
-    ref: 'User'   
+    ref: 'User'
   },
 })
 
@@ -13,7 +13,10 @@ const listingSchema = new mongoose.Schema({
   title: String,
   description: String,
   price: Number,
-  image: String,
+  image: {
+    url: { type: String, required: true },
+    cloudinary_id: { type: String, required: true },
+  },
   seller: { 
     type: Schema.Types.ObjectId,
     ref: 'User'

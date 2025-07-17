@@ -3,6 +3,7 @@ const router = express.Router()
 const Listing = require ('../models/listing')
 const session = require('express-session')
 const isSignedIn = require('../middleware/is-signed-in')
+const upload = require('../config/multer')
 
 
 // View new listing form
@@ -10,9 +11,14 @@ router.get('/new',(req, res) => {
   res.render('listings/new.ejs')
 })
 
-router.post('/', isSignedIn, async (req, res) => {
+router.post('/', isSignedIn, upload.single('image'),async (req, res) => {
   try {
     req.body.seller = req.session.user._id
+    req.body.image = {
+      url: req.file.path,
+      cloudinary_id: req.file.filename
+    }
+
     const addedListing = await Listing.create(req.body)
     res.redirect('/listings/')
   } catch (err){

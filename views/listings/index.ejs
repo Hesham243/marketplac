@@ -52,7 +52,7 @@
     <div class="listing-grid">
       <% foundListings.forEach((listing) => { %>
         <div class="listing-card">
-          <img src="<%= listing.image %>" alt="<%= listing.title %>">
+          <img src="<%= listing.image.url %>" alt="<%= listing.title %>">
           <h2><a href="/listings/<%= listing._id %>">
             <%= listing.title %>
           </a>
