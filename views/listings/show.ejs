@@ -1,0 +1,59 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title><%= foundListing.title %></title>
+</head>
+<body>
+    <h2><%= foundListing.title %></h2>
+    <p><%= foundListing.description %></p>
+    <p>SELLER: <%= foundListing.seller.username %></p>
+    <p><strong><%= foundListing.price %> BHD</strong></p>
+    <img src="<%= foundListing.image %>" class="listing-img" alt="Image of <%= foundListing.title %>" />
+
+    <% if (foundListing.seller._id.equals(user._id)) { %>
+        <form action="">
+            <button type="submit">Delete</button>
+        </form>
+    <% } %>
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title><%= foundListing.title %></title>
+</head>
+<body>
+  <header>
+    <h1>Listing Details</h1>
+  </header>
+
+  <div class="container">
+    <div class="listing-detail">
+      <img src="<%= foundListing.image %>" class="listing-img" alt="Image of <%= foundListing.title %>" />
+      <h2><%= foundListing.title %></h2>
+      <p class="description"><%= foundListing.description %></p>
+      <p class="seller">Seller: <strong><%= foundListing.seller.username %></strong></p>
+      <p class="price"><%= foundListing.price %> BHD</p>
+
+        <% if (foundListing.seller._id.equals(user._id)) { %>
+        <div class="btn-group">
+            <a href="/listings/<%= foundListing._id %>/edit" class="btn-edit">Edit Listing</a>
+            <form action="/listings/<%= foundListing._id %>?_method=DELETE" method="POST" style="display: inline;">
+            <button class="btn-delete" type="submit">Delete Listing</button>
+            </form>
+        </div>
+        <% } %>
+
+    </div>
+  </div>
+</body>
+</html>

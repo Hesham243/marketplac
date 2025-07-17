@@ -1,0 +1,67 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>All The Listings</title>
+</head>
+
+<body>
+  <h1>Marketplace Listings</h1>
+
+  <ul>
+    <% foundListings.forEach( (listing) => { %>
+    <li>
+      <h2>
+        <%= listing.title %>
+      </h2>
+      <p>
+        <%= listing.description %>
+      </p>
+      <p>
+        <%= listing.price %> BD
+      </p>
+      <img src="<%= listing.image %>">
+    </li>
+    <% }) %>
+  </ul>
+
+  
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>Marketplace Listings</title>
+</head>
+
+<body>
+  <header>
+    <h1>Marketplace Listings</h1>
+  </header>
+
+  <div class="container">
+    <div class="listing-grid">
+      <% foundListings.forEach((listing) => { %>
+        <div class="listing-card">
+          <img src="<%= listing.image %>" alt="<%= listing.title %>">
+          <h2><a href="/listings/<%= listing._id %>">
+            <%= listing.title %>
+          </a>
+        </h2>
+          <p><%= listing.description %></p>
+          <p class="price"><%= listing.price %> BD</p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

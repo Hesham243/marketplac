@@ -10,11 +10,13 @@
   <h1>Welcome to the app, <%= user.username %>!</h1>
   <a href="/auth/sign-out">Sign out</a>
   <a href="/listings/new">Add a Listing</a>
+  <a href="/listings/">View All Listings</a>
 <% } else { %>
 <h1>Welcome to the app, guest.</h1>
 <p>
   <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">sign in</a>.
 </p>
+
 <% } %>
 </body>
 </html>
