@@ -53,6 +53,21 @@
         </div>
         <% } %>
 
+        <h3>Leave a Comment</h3>
+        <form action="/listings/<%= foundListing._id %>/comments" method="POST">
+          <textarea name="content" id="" required></textarea>
+          <button type="submit">Post Comment</button>
+        </form>
+
+        <h3>Comments</h3>
+        <ul>
+          <% foundListing.comments.forEach( (comment) => { %>
+            <li>
+              <%= comment.content %> - <%= comment.author.username %>
+            </li>
+
+          <% }) %>
+        </ul>
     </div>
   </div>
 </body>
