@@ -1,16 +1,48 @@
-<%- include('./partials/head') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | MyMarketplace</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
 
-<% if (user) { %>
-  <h1>Welcome to the app, <%= user.username %>!</h1>
-  <a href="/auth/sign-out">Sign out</a>
-  <a href="/listings/new">Add a Listing</a>
-  <a href="/listings/">View All Listings</a>
-<% } else { %>
-<h1>Welcome to the app, guest.</h1>
-<p>
-  <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">sign in</a>.
-</p>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo">MyMarketplace</a>
+      <ul class="navbar-links">
+        <% if (user) { %>
+          <li><a href="/listings">View Listings</a></li>
+          <li><a href="/listings/new">Add Listing</a></li>
+          <li><a href="/auth/sign-out">Sign Out</a></li>
+        <% } else { %>
+          <li><a href="/auth/sign-up">Sign Up</a></li>
+          <li><a href="/auth/sign-in">Sign In</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </nav>
 
-<% } %>
+  <!-- Main content -->
+  <div class="container">
+    <% if (user) { %>
+      <h1>Welcome to the app, <%= user.username %>!</h1>
+      <p>Start by exploring all listings or adding your own.</p>
+      <div class="btn-group">
+        <a href="/listings" class="btn-submit">View All Listings</a>
+        <a href="/listings/new" class="btn-submit">Add a Listing</a>
+      </div>
+    <% } else { %>
+      <h1>Welcome to the app, Guest.</h1>
+      <p>Please sign in or create an account to get started.</p>
+      <div class="btn-group">
+        <a href="/auth/sign-up" class="btn-submit">Sign Up</a>
+        <a href="/auth/sign-in" class="btn-submit">Sign In</a>
+      </div>
+    <% } %>
+  </div>
+
 </body>
 </html>

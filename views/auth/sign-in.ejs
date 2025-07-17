@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -14,5 +14,44 @@
       <input type="password" name="password" id="password" />
       <button type="submit">Sign in</button>
     </form>
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In | MyMarketplace</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="navbar-logo">MyMarketplace</a>
+        <ul class="navbar-links">
+          <li><a href="/auth/sign-up">Sign Up</a></li>
+          <li><a href="/auth/sign-in">Sign In</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Sign In Form -->
+    <div class="container">
+      <h1>Sign In</h1>
+      <form action="/auth/sign-in" method="POST" class="listing-form">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required />
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required />
+
+        <button type="submit" class="btn-submit">Sign In</button>
+      </form>
+    </div>
+
   </body>
 </html>

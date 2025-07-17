@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,5 +16,46 @@
       <input type="password" name="confirmPassword" id="confirmPassword" />
       <button type="submit">Sign up</button>
     </form>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | MyMarketplace</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="/" class="navbar-logo">MyMarketplace</a>
+        <ul class="navbar-links">
+          <li><a href="/auth/sign-up">Sign Up</a></li>
+          <li><a href="/auth/sign-in">Sign In</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Sign Up Form -->
+    <div class="container">
+      <h1>Create a New Account</h1>
+      <form action="/auth/sign-up" method="POST" class="listing-form">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required />
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required />
+
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" name="confirmPassword" id="confirmPassword" required />
+
+        <button type="submit" class="btn-submit">Sign Up</button>
+      </form>
+    </div>
+
   </body>
 </html>
